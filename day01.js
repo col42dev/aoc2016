@@ -1,3 +1,5 @@
+'use strict';
+
 let fs = require('fs');
 let _ = require('underscore');
 let THREE = require('three');
@@ -22,7 +24,6 @@ module.exports = {
                 }
             });
 
-            console.log('PART 1:');
             console.log(Math.abs(pos.x) + Math.abs(pos.y));
         },
         function() {
@@ -39,7 +40,6 @@ module.exports = {
                     return _.every(_.range(parseInt(matches[2])), function() {
                         pos.add(direction);
                         if (_.where(visted, {x:pos.x,y:pos.y}).length) {
-                            console.log( 'PART 2:');     
                             console.log(  Math.abs(pos.x) + Math.abs(pos.y));            
                             return false;              
                         } 

@@ -1,11 +1,11 @@
+'use strict';
+
 let fs = require('fs');
 let _ = require('underscore');
-
 
 module.exports = {
     parts: [ 
         function() {
-            console.log('PART1');
             let data = fs.readFileSync('./data/day04.txt', 'utf8');
             data = data.toString().split('\n');
             let sectorIDsum = 0;
@@ -67,7 +67,6 @@ module.exports = {
         },
         function() {
 
-            console.log('PART2');
             let data = fs.readFileSync('./data/day04.txt', 'utf8');
             data = data.toString().split('\n');
             

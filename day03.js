@@ -1,12 +1,12 @@
+'use strict';
+
 let fs = require('fs');
 let _ = require('underscore');
-
 
 module.exports = {
 
     parts: [ 
         function() {
-            console.log('PART1');
             let possibleCount = fs.readFileSync('./data/day03.txt', 'utf8')
             .toString()
             .split('\n')
@@ -27,8 +27,6 @@ module.exports = {
             console.log(possibleCount);
         },
         function() {
-
-            console.log('PART2');
 
             let possibleCount = 0;
                

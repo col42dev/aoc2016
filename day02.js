@@ -1,3 +1,5 @@
+'use strict';
+
 let fs = require('fs');
 let _ = require('underscore');
 
@@ -9,7 +11,6 @@ module.exports = {
 
     parts: [ 
         function() {
-            console.log('PART1');
             let lpadPos = 4;
             let padOp = {
                 'L' : function(padPos) {
@@ -53,7 +54,6 @@ module.exports = {
         },
         function() {
 
-            console.log('PART2');
             let lpadPos = {row:2, col:0};
             let pad = [
                 ['0','0','1','0','0'],
