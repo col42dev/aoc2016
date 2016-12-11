@@ -1,8 +1,19 @@
 let _ = require('underscore');
+let fs = require('fs');
 
 let day = [];
-_.each(_.range(5), function(dayDatum, dayIndex, dayList) {
-    day.push(require('./day' + pad(dayDatum+1, 2)));
+_.each(_.range(25), function(dayDatum, dayIndex, dayList) {
+    
+    let sourceFilename = './day' +
+         function pad(n, width, z) {
+            z = z || '0';
+            n = n + '';
+                return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+            }(dayDatum+1, 2) + '.js';
+
+    if (fs.existsSync(sourceFilename)) {
+        day.push(require(sourceFilename));
+    }
 });
 
 let matches = process.argv.join(' ').match(/ (\d+)/g);  
@@ -27,11 +38,4 @@ if (matches && matches.length == 2) {
     console.log('   npm start <day> <part>');
     console.log('example:');
     console.log('   npm start 5 2');
-}
-
-
-function pad(n, width, z) {
-  z = z || '0';
-  n = n + '';
-  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }

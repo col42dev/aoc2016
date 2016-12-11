@@ -7,13 +7,13 @@ let crypto = require('crypto');
 module.exports = {
     parts: [ 
         function() {
-            let data = fs.readFileSync('./data/day05.txt', 'utf8').toString();
+            let data = fs.readFileSync('./data/day05.txt', 'utf8');
             let password = part1(data, 0, '');
             console.log('password:' + password); //801b56a7
         },
 
         function() {
-            let data = fs.readFileSync('./data/day05.txt', 'utf8').toString();
+            let data = fs.readFileSync('./data/day05.txt', 'utf8');
             let password = part2(data, 0, {});
             console.log('password:' + password);
         }],
